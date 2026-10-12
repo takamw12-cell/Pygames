@@ -6,8 +6,8 @@ import random
 pygame.init()
 
 pygame.mixer.init()
-bounce_sound = pygame.mixer.Sound("sounds/bounce.wav")
-win_sound = pygame.mixer.Sound("sounds/bounce.wav")
+bounce_sound = pygame.mixer.Sound("Pong Game/sounds/bounce.wav")
+win_sound = pygame.mixer.Sound("Pong Game/sounds/bounce.wav")
 win_sound.set_volume(0.7)
 bounce_sound.set_volume(0.5)
 
@@ -290,8 +290,8 @@ while running:
             pygame.draw.rect(screen, CYAN, left_paddle)
             pygame.draw.rect(screen, PURPLE, right_paddle)
 
-            left_text = font.render(str(score_left), True, WHITE)
-            right_text = font.render(str(score_right), True, WHITE)
+            left_text = font.render(str(score_left), True, CYAN)
+            right_text = font.render(str(score_right), True, PURPLE)
 
             screen.blit(left_text, (WIDTH // 4, 30))
             screen.blit(right_text, (3 * WIDTH // 4, 30))
@@ -301,7 +301,7 @@ while running:
                     message = "JOUEUR GAUCHE GAGNE!"
                 else:
                     message = "JOUEUR DROIT GAGNE!"
-                winner_text = menu_small_font.render(message, True, WHITE)
+                winner_text = menu_small_font.render(message, True, PURPLE)
                 screen.blit(
                     winner_text,
                     (WIDTH // 2 - winner_text.get_width() // 2, HEIGHT // 2),
@@ -323,8 +323,8 @@ while running:
             pygame.draw.rect(screen, PURPLE, right_paddle)
 
             # Afficher les scores
-            left_text = font.render(str(score_left), True, WHITE)
-            right_text = font.render(str(score_right), True, WHITE)
+            left_text = font.render(str(score_left), True, CYAN)
+            right_text = font.render(str(score_right), True, PURPLE)
 
             screen.blit(left_text, (WIDTH // 4, 30))
             screen.blit(right_text, (3 * WIDTH // 4, 30))
@@ -335,9 +335,9 @@ while running:
 
             if game_over:
                 if score_left >= 10:
-                    winner_text = font.render("JOUEUR GAUCHE GAGNE!", True, WHITE)
+                    winner_text = font.render("JOUEUR GAUCHE GAGNE!", True, CYAN)
                 else:
-                    winner_text = font.render("JOUEUR DROIT GAGNE!", True, WHITE)
+                    winner_text = font.render("JOUEUR DROIT GAGNE!", True, PURPLE)
                     screen.blit(
                         winner_text,
                         (WIDTH // 2 - winner_text.get_width() // 2, HEIGHT // 2),
